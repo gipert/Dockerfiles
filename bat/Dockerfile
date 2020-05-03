@@ -1,4 +1,4 @@
-FROM gipert/root-cern:6.20.02
+FROM gipert/root-cern:latest
 
 ARG BAT_VERSION="1.0.0"
 
