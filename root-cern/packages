@@ -31,6 +31,7 @@ libXpm-devel
 libiodbc-devel
 libtiff-devel
 libxml2-devel
+libzstd
 lz4-devel
 make
 mariadb-devel
