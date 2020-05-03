@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Post-push hook running..."
+
+root_versions=(6.18.02 6.20.02)
+
+for v in ${root_versions[@]}; do
+    docker push $DOCKER_REPO:$v
+done
