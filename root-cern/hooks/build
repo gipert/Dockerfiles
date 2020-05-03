@@ -2,8 +2,13 @@
 
 echo "Build hook running..."
 
-root_versions=(6.18.02 6.20.02)
+root_versions=(6.18.02 6.20.02 latest)
 
-for v in ${root_versions[@]}; do
-    docker build --build-arg ROOT_VERSION="$v" -f $DOCKERFILE_PATH -t $DOCKER_REPO:$v .
+for i in ${!root_versions[@]}; do
+    ver=${root_versions[i]}
+    if [[ $ver == latest ]]; then
+        docker tag $DOCKER_REPO:${root_versions[i-1]} $DOCKER_REPO:latest
+    else
+        docker build --build-arg ROOT_VERSION="$ver" -f $DOCKERFILE_PATH -t $DOCKER_REPO:$ver .
+    fi
 done
