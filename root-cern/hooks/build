@@ -2,7 +2,14 @@
 
 echo "Build hook running..."
 
-root_versions=(6.18.02 6.20.02 latest)
+root_versions=(
+    6.08.06
+    6.12.06
+    6.14.06
+    6.18.02
+    6.20.02
+    latest
+)
 
 for i in ${!root_versions[@]}; do
     ver=${root_versions[i]}
